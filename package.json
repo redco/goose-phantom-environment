@@ -1,0 +1,47 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "goose-phantom-environment",
+  "repository": "redcode/goose-phantom-environment",
+  "description": "Environment for Goose parser which allows to run it in PhantomJS",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "debug": "^3.0.1",
+    "goose-parser": "^0.2.0-alpha.58",
+    "lodash": "^4.17.4",
+    "mkdir-p": "^0.0.7",
+    "phantom": "^0.8.4",
+    "phantomjs-prebuilt": "^2.1.7",
+    "vow": "^0.4.16",
+    "vow-node": "^0.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "lint-staged": "^3.2.6",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^2.5.4"
+  },
+  "pre-commit": "lint:staged",
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --ignore-path .gitignore --fix .",
+    "lint:staged": "lint-staged",
+    "build": "node build",
+    "prepublish": "node build"
+  }
+}
