@@ -2,6 +2,7 @@
   "private": true,
   "version": "1.0.0",
   "name": "goose-phantom-environment",
+  "main": "lib/PhantomEnvironment.js",
   "repository": "redcode/goose-phantom-environment",
   "description": "Environment for Goose parser which allows to run it in PhantomJS",
   "license": "SEE LICENSE IN LICENSE",
