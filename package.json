@@ -1,12 +1,13 @@
 {
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "goose-phantom-environment",
   "main": "lib/PhantomEnvironment.js",
   "repository": "redcode/goose-phantom-environment",
   "description": "Environment for Goose parser which allows to run it in PhantomJS",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "debug": "^3.0.1",
     "goose-parser": "^0.2.0-alpha.58",
     "lodash": "^4.17.4",
@@ -42,7 +43,7 @@
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "eslint --ignore-path .gitignore --fix .",
     "lint:staged": "lint-staged",
-    "build": "node build",
+    "build": "node build.js",
     "prepublish": "node build"
   }
 }
