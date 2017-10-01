@@ -1601,9 +1601,9 @@ globby@^5.0.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
-goose-abstract-environment@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/goose-abstract-environment/-/goose-abstract-environment-1.0.1.tgz#2d00961d019642be781fb0ceabe66ef2d08cc9fe"
+goose-abstract-environment@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/goose-abstract-environment/-/goose-abstract-environment-1.0.3.tgz#07e5fbb5f985e06d7ab27ef3f234dacb99e616d1"
   dependencies:
     babel-polyfill "^6.23.0"
     debug "^3.0.1"
