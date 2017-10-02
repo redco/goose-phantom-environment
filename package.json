@@ -1,15 +1,15 @@
 {
   "private": true,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "name": "goose-phantom-environment",
   "main": "lib/PhantomEnvironment.js",
-  "repository": "redcode/goose-phantom-environment",
+  "repository": "redco/goose-phantom-environment",
   "description": "Environment for Goose parser which allows to run it in PhantomJS",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "debug": "^3.0.1",
-    "goose-abstract-environment": "1.0.3",
+    "goose-abstract-environment": "1.0.4",
     "lodash": "^4.17.4",
     "mkdir-p": "^0.0.7",
     "phantom": "^0.8.4",
