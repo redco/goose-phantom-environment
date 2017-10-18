@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "1.0.8",
+  "version": "1.0.9",
   "name": "goose-phantom-environment",
   "main": "lib/PhantomEnvironment.js",
   "repository": "redco/goose-phantom-environment",
@@ -11,11 +11,9 @@
     "debug": "^3.0.1",
     "goose-abstract-environment": "1.0.8",
     "lodash": "^4.17.4",
-    "mkdir-p": "^0.0.7",
+    "mkdirp": "^0.5.1",
     "phantom": "^0.8.4",
-    "phantomjs-prebuilt": "^2.1.7",
-    "vow": "^0.4.16",
-    "vow-node": "^0.3.0"
+    "phantomjs-prebuilt": "^2.1.7"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
