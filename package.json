@@ -12,8 +12,8 @@
     "goose-abstract-environment": "1.0.8",
     "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
-    "phantom": "^0.8.4",
-    "phantomjs-prebuilt": "^2.1.7"
+    "phantom": "4.0.5",
+    "phantomjs-prebuilt": "2.1.15"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
