@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "1.0.13",
+  "version": "1.0.14",
   "name": "goose-phantom-environment",
   "main": "lib/PhantomEnvironment.js",
   "repository": "redco/goose-phantom-environment",
