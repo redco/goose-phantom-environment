@@ -5,7 +5,7 @@ environment="goose-${environmentName}-environment";
 environmentVersion=`npm show goose-${environmentName}-environment version`;
 
 echo "Building image for $1";
-IMAGE_NAME="redcode/goose-phantom-environment";
+IMAGE_NAME="redcode/goose-${environmentName}-environment";
 TAG_NAME_VERSIONED="${environmentVersion}";
 TAG_NAME_LATEST="latest";
 docker build --build-arg ENVIRONMENT=$environment -t "$TAG_NAME_VERSIONED" -t "$TAG_NAME_LATEST" -f ./Dockerfile .
