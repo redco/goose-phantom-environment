@@ -42,13 +42,13 @@ jobs:
 
 workflows:
   version: 2
-  test:
+  build_and_test:
     jobs:
       - checkout:
           filters:
             branches:
               only:
-                - *
+                - /*/
       - build:
           requires:
             - checkout
