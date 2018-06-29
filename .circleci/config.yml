@@ -10,33 +10,33 @@ jobs:
          paths:
            - .
 
-  build:
-    docker:
-      - image: node:8.11.1-alpine
-    steps:
-      - attach_workspace:
+   build:
+     docker:
+       - image: node:8.11.1-alpine
+     steps:
+       - attach_workspace:
           at: .
-      - restore_cache:
+       - restore_cache:
           key: dependency-cache-{{ checksum "yarn.lock" }}
-      - run:
+       - run:
           name: Install dependencies
           command: yarn install && yarn build
-      - save_cache:
+       - save_cache:
           key: dependency-cache-{{ checksum "yarn.lock" }}
           paths:
             - ./node_modules
-      - persist_to_workspace:
+       - persist_to_workspace:
           root: .
           paths:
             - .
 
-  test:
-    docker:
-      - image: node:8.11.1-alpine
-    steps:
-      - attach_workspace:
+   test:
+     docker:
+       - image: node:8.11.1-alpine
+     steps:
+       - attach_workspace:
           at: .
-      - run:
+       - run:
           name: Run linter
           command: yarn lint
 
