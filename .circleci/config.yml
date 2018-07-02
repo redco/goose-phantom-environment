@@ -2,7 +2,7 @@ version: 2
 jobs:
    checkout:
      docker:
-       - image: node:8.11.1-alpine
+       - image: circleci/node:8.11.1
      steps:
        - checkout
        - persist_to_workspace:
@@ -12,7 +12,7 @@ jobs:
 
    build:
      docker:
-       - image: node:8.11.1-alpine
+       - image: circleci/node:8.11.1
      steps:
        - attach_workspace:
           at: .
@@ -32,7 +32,7 @@ jobs:
 
    test:
      docker:
-       - image: node:8.11.1-alpine
+       - image: circleci/node:8.11.1
      steps:
        - attach_workspace:
           at: .
