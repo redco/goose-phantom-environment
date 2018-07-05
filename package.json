@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "1.0.16",
+  "version": "1.0.17",
   "name": "goose-phantom-environment",
   "main": "lib/PhantomEnvironment.js",
   "repository": "redco/goose-phantom-environment",
@@ -9,7 +9,7 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "debug": "^3.1.0",
-    "goose-abstract-environment": "^1.0.11",
+    "goose-abstract-environment": "^1.0.12",
     "lodash.clone": "^4.5.0",
     "lodash.defaults": "^4.2.0",
     "lodash.sample": "^4.2.1",
