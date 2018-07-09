@@ -1,5 +1,9 @@
 # Goose Phantom Environment
 
+[![Build Status](https://img.shields.io/circleci/project/github/redco/goose-phantom-environment.svg?style=flat)](https://circleci.com/gh/redco/goose-phantom-environment)
+[![Latest Stable Version](https://img.shields.io/npm/v/goose-phantom-environment.svg?style=flat)](https://www.npmjs.com/package/goose-phantom-environment)
+[![Total Downloads](https://img.shields.io/npm/dt/goose-phantom-environment.svg?style=flat)](https://www.npmjs.com/package/goose-phantom-environment)
+
 Environment for Goose parser which allows to run it in PhantomJS
 
 ## PhantomEnvironment
