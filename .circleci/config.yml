@@ -45,7 +45,10 @@ workflows:
   test:
     jobs:
       - checkout:
-
+          filters:
+            branches:
+              only:
+                - *
       - build:
           requires:
             - checkout
