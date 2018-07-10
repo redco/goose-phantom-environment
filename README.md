@@ -4,7 +4,7 @@
 [![Latest Stable Version](https://img.shields.io/npm/v/goose-phantom-environment.svg?style=flat)](https://www.npmjs.com/package/goose-phantom-environment)
 [![Total Downloads](https://img.shields.io/npm/dt/goose-phantom-environment.svg?style=flat)](https://www.npmjs.com/package/goose-phantom-environment)
 
-Environment for Goose parser which allows to run it in PhantomJS
+Environment for [Goose Parser](https://github.com/redco/goose-parser) which allows to run it in PhantomJS
 
 ## PhantomEnvironment
 That environment is used for running Parser on node.
