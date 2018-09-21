@@ -40,53 +40,53 @@ jobs:
         name: Run linter
         command: yarn lint
 
-    publish:
-      docker:
-      - image: circleci/node:8.12.0
-      steps:
-      - attach_workspace:
-          at: .
-      - setup_remote_docker:
-          docker_layer_caching: true
-      - run:
-          name: Publish release notes when build from a tag
-          command: |
-            if [[ $CIRCLE_TAG ]]; then
-              yarn global add github-release-notes
-              $(yarn global bin)/gren release
-              $(yarn global bin)/gren changelog
-            fi
-      - run:
-          name: Release to npm
-          command: |
+  publish:
+    docker:
+    - image: circleci/node:8.12.0
+    steps:
+    - attach_workspace:
+        at: .
+    - setup_remote_docker:
+        docker_layer_caching: true
+    - run:
+        name: Publish release notes when build from a tag
+        command: |
+          if [[ $CIRCLE_TAG ]]; then
+            yarn global add github-release-notes
+            $(yarn global bin)/gren release
+            $(yarn global bin)/gren changelog
+          fi
+    - run:
+        name: Release to npm
+        command: |
+          TAG_VERSION="$(echo $CIRCLE_TAG | cut -d 'v' -f 2)"
+          NPM_VERSION="$(npm show goose-phantom-environment version)"
+          echo "$TAG_VERSION == $NPM_VERSION"
+          if [ $TAG_VERSION == $NPM_VERSION ]; then
+            exit 0
+          fi
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ./.npmrc
+          npm publish ./build
+    - run:
+        name: Waiting for npm version to be ready
+        command: |
+          sleep 3
+          for i in `seq 1 60`;
+          do
             TAG_VERSION="$(echo $CIRCLE_TAG | cut -d 'v' -f 2)"
             NPM_VERSION="$(npm show goose-phantom-environment version)"
-            echo "$TAG_VERSION == $NPM_VERSION"
             if [ $TAG_VERSION == $NPM_VERSION ]; then
               exit 0
             fi
-            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ./.npmrc
-            npm publish ./build
-      - run:
-          name: Waiting for npm version to be ready
-          command: |
-            sleep 3
-            for i in `seq 1 60`;
-            do
-              TAG_VERSION="$(echo $CIRCLE_TAG | cut -d 'v' -f 2)"
-              NPM_VERSION="$(npm show goose-phantom-environment version)"
-              if [ $TAG_VERSION == $NPM_VERSION ]; then
-                exit 0
-              fi
-              echo -n .
-              sleep 1
-            done
-              echo "Failed waiting for npm version $TAG_VERSION != $NPM_VERSION" && exit 1
-      - run:
-          name: Build and push docker image
-          command: |
-            echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-            ./docker/publish.sh
+            echo -n .
+            sleep 1
+          done
+            echo "Failed waiting for npm version $TAG_VERSION != $NPM_VERSION" && exit 1
+    - run:
+        name: Build and push docker image
+        command: |
+          echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+          ./docker/publish.sh
 
 workflows:
   version: 2
@@ -97,28 +97,28 @@ workflows:
           tags:
             only:
             - /v.*/
-        - build:
-            requires:
-            - checkout
-            filters:
-              tags:
-                only:
-                - /v.*/
-        - test:
-            requires:
-            - build
-            filters:
-              tags:
-                only:
-                - /v.*/
-        - publish:
-            requires:
-            - test
-            filters:
-              tags:
-                only:
-                - /v.*/
-              branches:
-                ignore:
-                - /.*/
+    - build:
+        requires:
+        - checkout
+        filters:
+          tags:
+            only:
+            - /v.*/
+    - test:
+        requires:
+        - build
+        filters:
+          tags:
+            only:
+            - /v.*/
+    - publish:
+        requires:
+        - test
+        filters:
+          tags:
+            only:
+            - /v.*/
+          branches:
+            ignore:
+            - /.*/
 
