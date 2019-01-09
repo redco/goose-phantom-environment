@@ -5,7 +5,8 @@ const fs = require('fs');
 const pkg = require('./package.json');
 
 rimraf.sync('build');
-cp.spawnSync('babel', ['lib', '-d', 'build/lib'], { stdio: 'inherit' });
+cp.spawnSync('mkdir', ['-p', 'build'], { stdio: 'inherit' });
+cp.spawnSync('cp', ['-R', 'lib', 'build/lib'], { stdio: 'inherit' });
 delete pkg.private;
 delete pkg.devDependencies;
 delete pkg.scripts;
