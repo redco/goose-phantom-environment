@@ -1,15 +1,14 @@
 {
   "private": true,
-  "version": "1.0.18",
+  "version": "1.1.0",
   "name": "goose-phantom-environment",
   "main": "lib/PhantomEnvironment.js",
   "repository": "redco/goose-phantom-environment",
   "description": "Environment for Goose parser which allows to run it in PhantomJS",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "babel-polyfill": "^6.23.0",
     "debug": "^3.1.0",
-    "goose-abstract-environment": "^1.0.12",
+    "goose-abstract-environment": "^1.1.0",
     "lodash.clone": "^4.5.0",
     "lodash.defaults": "^4.2.0",
     "lodash.sample": "^4.2.1",
@@ -18,11 +17,6 @@
     "phantomjs-prebuilt": "^2.1.7"
   },
   "devDependencies": {
-    "babel-cli": "^6.18.0",
-    "babel-eslint": "^7.1.1",
-    "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-preset-latest": "^6.16.0",
-    "babel-preset-stage-0": "^6.16.0",
     "eslint": "^3.13.1",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
